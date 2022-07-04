@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Tasker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Splash&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" href="https://www.pngall.com/wp-content/uploads/8/Task-PNG-Free-Download.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-size: 30px;
+        }
+
+        #but {
+            width: 170px;
+            height: 40px;
+            background-color: rgb(0, 255, 68);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        
+        #res{
+            width: 170px;
+            height: 40px;
+            background-color: rgb(255, 100, 50);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        span {
+            color: rgb(0, 255, 68);
+
+        }
+
+        #inp {
+            height: 40px;
+            width: 500px;
+            border: none;
+            border-radius: 5px;
+            padding: 0 10px;
+            font-size: 20px;
+            outline: none;
+            border: 3px solid rgba(0, 255, 68, 100);
+            transition: 1s;
+        }
+
+        #taskerPage {
+            width: 100%;
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column-reverse;
+            margin-top: 80px;
+            /*            padding-left: 50px;*/
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        header {
+            height: 100px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            /*            position: fixed;*/
+            width: 100%;
+            margin-top: -100px;
+            /*            padding-left: 50px;*/
+            color: green;
+            z-index: 19;
+            width: 100%;
+        }
+
+        .box {
+            margin-top: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrap {
+            background-color: #000;
+            color: #fff;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            padding: 100px;
+            flex-direction: column;
+            font-size: 30px;
+        }
+
+        @media screen and (max-width: 896px) {
+            #inp {
+                width: 60%;
+
+            }
+
+            .box {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                align-items: flex-start;
+            }
+
+        }
+
+        @media screen and (max-width: 879px) {
+            #inp {
+                width: 60%;
+
+            }
+
+            .box {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                align-items: flex-start;
+            }
+        }
+
+        @media screen and (max-width: 786px) {
+            #taskerPage {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media screen and (max-width: 548px) {
+            #but {
+                width: 70px;
+                /*                height: 30px;*/
+                font-size: 15px
+            }
+            
+            #res {
+                width: 70px;
+                /*                height: 30px;*/
+                font-size: 15px
+            }
+
+            h1 {
+                font-size: 35px
+            }
+        }
+
+        @media screen and (max-width: 458px) {
+
+            h1 {
+                font-size: 30px
+            }
+        }
+
+        @media screen and (max-width: 423px) {
+            .wrap {
+                padding: 0;
+                /*                padding-top: 100px;*/
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1 {
+                padding: 0;
+                margin: 0;
+            }
+
+            .box {
+                display: flex;
+                justify-content: center;
+            }
+
+            header {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #taskerPage {
+                width: 80%;
+            }
+        }
+
+
+        @media screen and (max-width: 332px) {
+            h1 {
+                font-size: 35px;
+            }
+        }
+
+        @media screen and (max-width: 256px) {
+            h1 {
+                font-size: 25px;
+            }
+
+            #inp {
+                height: 30px;
+            }
+
+            #but {
+                height: 30px;
+            }
+            
+            #res {
+                height: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header id="header">
+            <h1 id="Cybersecurity_header"><span>/*</span></h1>
+        </header>
+
+        <div class="box">
+            <input type="text" id="inp">
+            <button id="but">Add</button>
+            <button id="res">Resset</button>
+        </div>
+
+        <div id="taskerPage"></div>
+    </div>
+
+    <script>
+        let arr = JSON.parse(localStorage.getItem('tasker')) || [];
+
+        $('#res').click(function(){
+            localStorage.clear();
+            $('#taskerPage').html("")
+        })
+
+        $('#but').click(function() {
+            if ($('#inp').val() == '') {
+                $('#inp').css('border', '3px solid red')
+                setTimeout(function() {
+                    $('#inp').css('border', '3px solid rgba(0, 255, 68, 100)')
+                }, 1000)
+            } else {
+                let taskInfo = $('#inp').val();
+                arr.push(taskInfo);
+                $('#inp').val('');
+                $('#taskerPage').append('<div class="task_cc"><span>/*</span>' + taskInfo + '<span>/*</span></div>');
+                localStorage.setItem('tasker', JSON.stringify(arr));
+                console.log(JSON.parse(localStorage.getItem('tasker')));
+            }
+
+
+        });
+
+        function showTask(arr) {
+            JSON.parse(localStorage.getItem('tasker'));
+            console.log(JSON.parse(localStorage.getItem('tasker')));
+            for (let i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+                $('#taskerPage').append('<div class="task_cc"><span>/*</span>' + arr[i] + '<span>/*</span></div>');
+                $('.task_cc').click(function() {
+                    $(this).hide(500);
+                })
+            }
+        }
+
+
+
+        showTask(arr);
+
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>A<span>|</span>';
+        }, 300)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>An<span>|</span>';
+        }, 600)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>And<span>|</span>';
+        }, 900)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>Andr<span>|</span>';
+        }, 1200)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>Andri<span>|</span>';
+        }, 1500)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>Andriy<span>|</span>';
+        }, 1800)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>Andriy <span>|</span>';
+        }, 2100)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>Andriy S<span>|</span>';
+        }, 2400)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>Andriy St<span>|</span>';
+        }, 2700)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>Andriy Ste<span>|</span>';
+        }, 3000)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>Andriy Step<span>|</span>';
+        }, 3300)
+        setTimeout(function() {
+            Cybersecurity_header.innerHTML = '<span>/*</span>Andriy Step<span>/*</span>';
+        }, 3600)
+
+    </script>
+</body>
+
+</html>
